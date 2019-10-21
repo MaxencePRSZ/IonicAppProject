@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> All Todos </title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">		
+	</head>
+	<body>
+
+    <div style="margin-top:50px">
+		<h1>Todos </h1>
+
+        <ul>
+          <% todos.forEach(function(todo) { %>
+            <% var url = "/todo/" + todo._id  %>
+            <li><a href=<%= url %> > <%= todo.title %> </a>
+				<button class="glyphicon glyphicon-search" 
+					onclick="location.href='/api/update/todo/<%= todo._id %>'"></button>
+				<button class="glyphicon glyphicon-trash" 
+					onclick="location.href='/api/delete/todo/<%= todo._id %>'"></button>
+            </li>
+
+          <% }); %>
+        </ul>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			Todos List
+		</ion-title>
+		<ion-buttons slot="end">
+			<ion-button routerLink="/add" routerDirection="forward">
+				<ion-icon slot="icon-only" name="add-circle"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list *ngFor="let todo of todos">
+		<ion-item-sliding #item>
+			<ion-item>
+				{{todo.title}}
+			</ion-item>
+			<ion-item-options side="start">
+				<ion-button ion-button color="light" routerLink="/todo/{{todo._id}}">Done</ion-button>
+			</ion-item-options>
+			<ion-item-options side="end">
+				<ion-button color="light" routerLink="/view/{{todo._id}}">Edit</ion-button>
+				<ion-button color="danger" (click)="deleteTodo(todo._id)">Delete</ion-button>
+			</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>
