@@ -28,7 +28,6 @@ export class HomePage {
 		await loading.present();
 		await this.api.getTodos()
 		.subscribe(res => {
-			console.log("Get todos " + res);
 			this.todos = res;
 			loading.dismiss();
 		}, err => {
@@ -39,21 +38,21 @@ export class HomePage {
 	}
 
 	async getRecipes(){
-/*		const loading = await this.loadingController.create({
-			message: 'Loading'
-		});
+		// const loading = await this.loadingController.create({
+		// 	message: 'Loading'
+		// });
 
-		await loading.present();
+		// await loading.present();
 
-		await this.api.getRecipes()
-		.subscribe(res => {
-			console.log(res);
-			this.recipes = res.recipes;
-			loading.dismiss();
-		}, err => {
-			console.log(err);
-			loading.dismiss();
-		});*/
+		// await this.api.getRecipes()
+		// .subscribe(res => {
+		// 	console.log(res);
+		// 	this.recipes = res.recipes;
+		// 	loading.dismiss();
+		// }, err => {
+		// 	console.log(err);
+		// 	loading.dismiss();
+		// });
 
 		this.recipes = this.api.getRecipes().recipes
 	}
