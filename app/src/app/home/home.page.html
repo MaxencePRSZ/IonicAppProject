@@ -45,7 +45,7 @@
 		</ion-title>
 		<ion-buttons slot="end">
 			<ion-button routerLink="/add" routerDirection="forward">
-				<ion-icon slot="icon-only" name="add-circle"></ion-icon>
+				<ion-icon slot="icon-only" name="cart"></ion-icon>
 			</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
@@ -53,8 +53,11 @@
 
 <ion-content>
 	<ion-list *ngFor="let recipe of recipes">
-		<ion-item>
-			wubbalubba
+		<ion-item slot="start">
+			{{recipe.title}}
+		</ion-item>
+		<ion-item slot="end">
+			{{recipe.social_rank}}
 		</ion-item>
 	</ion-list>
 </ion-content>
