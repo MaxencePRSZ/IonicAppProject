@@ -9,32 +9,15 @@ import { RestService } from '../rest.service';
 	styleUrls: ['home.page.scss'],
 })
 
+
 export class HomePage {
 
-	todos : any;
 	recipes : any;
 	api : RestService;
 
 	constructor(public restapi: RestService, public loadingController: LoadingController, public navController : NavController) {
 
 		this.api = restapi;
-	}
-
-	async getTodos() {
-		const loading = await this.loadingController.create({
-			message: 'Loading'
-		});
-
-		await loading.present();
-		await this.api.getTodos()
-		.subscribe(res => {
-			this.todos = res;
-			loading.dismiss();
-		}, err => {
-			console.log(err);
-			loading.dismiss();
-		});
-
 	}
 
 	async getRecipes(){
