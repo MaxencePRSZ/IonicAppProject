@@ -1,3 +1,5 @@
+<!--
+
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
@@ -28,5 +30,31 @@
 				<ion-button color="danger" (click)="deleteTodo(todo._id)">Delete</ion-button>
 			</ion-item-options>
 		</ion-item-sliding>
+	</ion-list>
+</ion-content>
+
+-->
+
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			Recipes List
+		</ion-title>
+		<ion-buttons slot="end">
+			<ion-button routerLink="/add" routerDirection="forward">
+				<ion-icon slot="icon-only" name="add-circle"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list *ngFor="let recipe of recipes">
+		<ion-item>
+			wubbalubba
+		</ion-item>
 	</ion-list>
 </ion-content>
