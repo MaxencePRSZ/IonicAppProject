@@ -36,15 +36,7 @@ export class RestService {
 		return body || { };
 	}
 
-	getTodos(): Observable<any> {
 
-		const apiUrl = "http://localhost:3000/api/todos";
-
-		return this.http.get(apiUrl, httpOptions).pipe(
-			map(this.extractData),
-			catchError(this.handleError));
-
-	}
 
 	getRecipes(): Observable<any> {
 		/*const apiUrl = "https://www.food2fork.com/api/search?key=aae81e7939233734b9564ab503b670f9";
