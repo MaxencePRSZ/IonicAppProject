@@ -56,6 +56,17 @@ export class HomePage {
 		});
 	}
 
+	toggleSearchBar(){
+		var searchBar = document.getElementById("searchBar");
+		searchBar.classList.toggle("hiddenSearchBar");
+		var recipeTitle = document.getElementById("recipeTitle");
+		recipeTitle.classList.toggle("hidden");
+
+		var searchIcon = document.getElementById("searchIcon");
+		searchIcon.name = (searchIcon.name == "search" ? "close" : "search");
+
+	}
+
 
 	ngOnInit() {
 		this.getRecipes();

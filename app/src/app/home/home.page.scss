@@ -1,0 +1,54 @@
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+
+@-webkit-keyframes leftToRightFadeIn {
+	from {
+		opacity: 0;
+		left: -100%;
+	}
+	to {
+		opacity: 1;
+		left: 0;
+	}
+
+}
+
+@-webkit-keyframes reverseLeftToRightFadeIn {
+	from {
+		opacity: 1;
+		left: 0;
+	}
+	to {
+		opacity: 0;
+		left: -100%;
+		display: none;
+	}
+}
+
+.fadeIn2 {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+}
+
+#searchBar{
+	animation-name: leftToRightFadeIn;
+	animation-duration: 0.5s;
+}
+
+.hidden{
+	display: none;
+}
+
+.hiddenSearchBar{
+	animation-name: reverseLeftToRightFadeIn;
+	animation-duration: 0.5s;
+	display: none;
+}

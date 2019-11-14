@@ -80,7 +80,6 @@ export class RestService {
 		return this.http.put(apiUrl, postData, httpOptions).
 		subscribe(res => {
 			console.log(res);
-			this.getTodos();
 		}, err => {
 			console.log(err);
 		});
