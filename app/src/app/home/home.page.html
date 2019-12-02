@@ -17,17 +17,26 @@
 	</ion-toolbar>
 </ion-header>
 
+
+
+
+
 <ion-content>
 	<ion-list *ngFor="let recipe of recipes">
 		<ion-item-sliding #item>
-			<ion-item>
-				<ion-label slot="start">
-					{{recipe.title}}
-				</ion-label>
-				<ion-label slot="end">
-					{{recipe.social_rank}}
-				</ion-label>
-			</ion-item>
+			<ion-card>
+				<ion-card-header>
+						<ion-icon slot="icon-only" name="search"></ion-icon>
+					<ion-card-subtitle>
+						{{recipe.readyInMinutes}}
+					</ion-card-subtitle>
+					<ion-card-title>{{recipe.title}}</ion-card-title>
+				</ion-card-header>
+				<ion-card-content>
+					Keep close to Nature's heart... and break clear away, once in awhile,
+					and climb a mountain or spend a week in the woods. Wash your spirit clean.
+				</ion-card-content>
+			</ion-card>
 		</ion-item-sliding>
 	</ion-list>
 </ion-content>
