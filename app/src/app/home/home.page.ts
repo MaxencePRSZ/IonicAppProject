@@ -29,7 +29,7 @@ export class HomePage {
 
 		await this.api.getRecipes()
 		.subscribe(res => {
-			console.log(res);
+			// console.log(res);
 			this.recipes = res.results;
 			loading.dismiss();
 		}, err => {

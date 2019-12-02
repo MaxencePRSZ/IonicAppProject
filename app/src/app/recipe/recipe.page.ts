@@ -21,22 +21,24 @@ export class RecipePage implements OnInit {
 	}
 
 	async getRecipe(id:any) {
-		// const loading = await this.loadingController.create({
-		// 	message: 'Loading'
-		// });
+		const loading = await this.loadingController.create({
+			message: 'Loading'
+		});
 
-		// await loading.present();
-		// await this.api.getRecipe(this.id)
-		// .subscribe(res => {
-		// 	this.recipe = res.recipe
-		// 	loading.dismiss();
-		// }, err => {
-		// 	console.log(err);
-		// 	loading.dismiss();
-		// });
+		await loading.present();
+		await this.api.getRecipe(this.id)
+		.subscribe(res => {
+			console.log(res);
+			this.recipe = res;
+			console.log(this.recipe);
+			loading.dismiss();
+		}, err => {
+			console.log(err);
+			loading.dismiss();
+		});
 
 
-		this.recipe = this.api.getRecipe(this.id).recipe
+		// this.recipe = this.api.getRecipe(this.id).recipe
 
 	}
 

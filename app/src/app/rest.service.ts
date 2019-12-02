@@ -14,6 +14,10 @@ const httpOptions = {
 })
 export class RestService {
 
+	// Changer l'api key si trop de requetes ont été faites sur la meme key
+	const apiKey="8465d792b5f742559031ec962d38ad28"
+	//const apiKey="9287c41c94b34dd9b88a223d7ce0ee97"
+
 	constructor(private http: HttpClient) { }
 
 	private handleError(error: HttpErrorResponse) {
@@ -39,7 +43,7 @@ export class RestService {
 
 
 	getRecipes(): Observable<any> {
-		const apiUrl = "https://api.spoonacular.com/recipes/search?number=20&apiKey=8465d792b5f742559031ec962d38ad28";
+		const apiUrl = "https://api.spoonacular.com/recipes/search?number=20&apiKey=" + this.apiKey;
 
 		return this.http.get(apiUrl, httpOptions).pipe(
 			map(this.extractData),
@@ -50,13 +54,13 @@ export class RestService {
 	}
 
 	getRecipe(id:any): Observable<any> {
-		// const apiUrl = "https://www.food2fork.com/api/get?key=8d1d859c40d528c3b2bd1e994a12571f&rId=" + id;
+		const apiUrl = "https://api.spoonacular.com/recipes/"+id+"/information?includeNutrition=false&apiKey="+this.apiKey
 
-		// return this.http.get(apiUrl, httpOptions).pipe(
-		// 	map(this.extractData),
-		// 	catchError(this.handleError));
+		return this.http.get(apiUrl, httpOptions).pipe(
+			map(this.extractData),
+			catchError(this.handleError));
 
-		return {"recipe": {"publisher": "Closet Cooking", "f2f_url": "http://food2fork.com/view/35382", "ingredients": ["2 jalapeno peppers, cut in half lengthwise and seeded", "2 slices sour dough bread", "1 tablespoon butter, room temperature", "2 tablespoons cream cheese, room temperature", "1/2 cup jack and cheddar cheese, shredded", "1 tablespoon tortilla chips, crumbled\n"], "source_url": "http://www.closetcooking.com/2011/04/jalapeno-popper-grilled-cheese-sandwich.html", "recipe_id": "35382", "image_url": "http://static.food2fork.com/Jalapeno2BPopper2BGrilled2BCheese2BSandwich2B12B500fd186186.jpg", "social_rank": 100.0, "publisher_url": "http://closetcooking.com", "title": "Jalapeno Popper Grilled Cheese Sandwich"}}
+		// return {"recipe": {"publisher": "Closet Cooking", "f2f_url": "http://food2fork.com/view/35382", "ingredients": ["2 jalapeno peppers, cut in half lengthwise and seeded", "2 slices sour dough bread", "1 tablespoon butter, room temperature", "2 tablespoons cream cheese, room temperature", "1/2 cup jack and cheddar cheese, shredded", "1 tablespoon tortilla chips, crumbled\n"], "source_url": "http://www.closetcooking.com/2011/04/jalapeno-popper-grilled-cheese-sandwich.html", "recipe_id": "35382", "image_url": "http://static.food2fork.com/Jalapeno2BPopper2BGrilled2BCheese2BSandwich2B12B500fd186186.jpg", "social_rank": 100.0, "publisher_url": "http://closetcooking.com", "title": "Jalapeno Popper Grilled Cheese Sandwich"}}
 
 	}
 

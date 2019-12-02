@@ -4,15 +4,34 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content>
+<!-- <ion-content>
       <ion-card>
-        <img src= {{recipe.image_url}} />
         <ion-card-header>
           <ion-card-subtitle>Destination</ion-card-subtitle>
           <ion-card-title>Madison, WI</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+          <ul *ngFor="let ingredient of recipe.extendedIngredients">
+            <li>
+              {{ingredient.name}}
+            </li>
+          </ul>
         </ion-card-content>
       </ion-card>
+</ion-content> -->
+
+
+<ion-content>
+  <ion-list *ngFor="let ingredient of recipe.extendedIngredients">
+    <ion-item-sliding #item>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ingredient.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
+
