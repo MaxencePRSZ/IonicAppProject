@@ -25,16 +25,17 @@
 	<ion-list *ngFor="let recipe of recipes">
 		<ion-item-sliding #item>
 			<ion-card>
-				<ion-card-header>
-					<ion-card-subtitle>{{recipe.readyInMinutes}}
-						<ion-item class="activated">
-							<ion-icon slot="start" name="timer"></ion-icon>
-						</ion-item>
-					</ion-card-subtitle>
+				<ion-card-header class="card_header_recipe_home">
+					<img class="img_recipe" src="https://spoonacular.com/recipeImages/{{recipe.imageUrls}}"/>
 					<ion-card-title>{{recipe.title}}</ion-card-title>
+
 				</ion-card-header>
 				<ion-card-content>
-					<ion-button routerLink="/recipe/{{recipe.id}}" routerDirection="forward">
+					<ion-icon name="timer"></ion-icon>
+					{{recipe.readyInMinutes}}
+					<ion-icon name="person"></ion-icon>
+					{{recipe.servings}}
+					<ion-button class="btn_recipe" routerLink="/recipe/{{recipe.id}}" routerDirection="forward">
 						<ion-icon id="searchIcon" slot="icon-only" name="search"></ion-icon>
 					</ion-button>
 				</ion-card-content>
