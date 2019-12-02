@@ -52,3 +52,29 @@
 	animation-duration: 0.5s;
 	display: none;
 }
+
+
+.img_recipe{
+	object-fit: cover;
+	max-height: 200px;
+}
+
+.card_header_recipe_home{
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+}
+
+.card_header_recipe_home ion-card-subtitle{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.card_header_recipe_home ion-card-title{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.btn_recipe {
+	float: right;
+}
