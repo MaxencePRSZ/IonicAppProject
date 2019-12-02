@@ -54,7 +54,6 @@ export class ViewPage implements OnInit {
 
 	logForm(){
 		this.api.editTodo(this.id, this.todo.title, this.todo.description);
-		this.api.getTodos();
 
 	}
 

@@ -46,7 +46,7 @@ export class HomePage {
 		console.log("done");
 	}
 
-	async deleteTodo(id:any) {
+/*	async deleteTodo(id:any) {
 		await this.api.deleteTodo(id)
 		.subscribe(res => {
 			console.log(res);
@@ -54,7 +54,7 @@ export class HomePage {
 		}, err => {
 			console.log(err);
 		});
-	}
+	}*/
 
 	toggleSearchBar(){
 		var searchBar = document.getElementById("searchBar");
