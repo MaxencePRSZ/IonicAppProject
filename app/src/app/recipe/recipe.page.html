@@ -1,8 +1,12 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar>
-    <ion-title class="title">{{recipe.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+      <ion-title class="title">{{recipe.title}}</ion-title>
   </ion-toolbar>
-</ion-header> -->
+</ion-header>
 
 <!-- <ion-content>
       <ion-card>
@@ -23,15 +27,10 @@
 
 <ion-content>
   <ion-list *ngFor="let ingredient of recipe.extendedIngredients">
-    <ion-item-sliding #item>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>{{ingredient.name}}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-        </ion-card-content>
-      </ion-card>
-    </ion-item-sliding>
+    <ion-item>
+
+          <ion-label>{{ingredient.name}}</ion-label>
+    </ion-item>
   </ion-list>
 </ion-content>
 

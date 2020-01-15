@@ -37,8 +37,9 @@ export class HomePage {
 			loading.dismiss();
 		});
 
-/*		this.recipes = this.api.getRecipes().recipes
-*/	}
+		// this.recipes = this.api.getRecipes().results
+		console.log(this.recipes)
+	}
 
 
 
