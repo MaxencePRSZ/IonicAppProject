@@ -63,7 +63,7 @@ export class HomePage {
 		var recipeTitle = document.getElementById("recipeTitle");
 		recipeTitle.classList.toggle("hidden");
 
-		var searchIcon = document.getElementById("searchIcon");
+		var searchIcon = (<HTMLInputElement>document.getElementById("searchIcon"));
 		searchIcon.name = (searchIcon.name == "search" ? "close" : "search");
 
 	}
